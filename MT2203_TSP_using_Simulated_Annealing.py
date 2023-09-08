@@ -1,13 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# # TSP using Simulated Annealing
-
-# Importing Required Libiries
-
-# In[8]:
-
-
 import numpy as np
 import random
 import math
@@ -16,9 +6,6 @@ import random
 
 
 # Function to Calulate Distance of the Route
-
-# In[9]:
-
 
 def calculate_total_distance(solution, distance_matrix):
     total_distance = 0
@@ -32,9 +19,6 @@ def calculate_total_distance(solution, distance_matrix):
 
 
 # Function to Generate New Path either by Reversing the section or by shifting the section
-
-# In[11]:
-
 
 def generate_neighbor_solution(current_solution):
     choices = ['reverse', 'shift']
@@ -59,9 +43,6 @@ def generate_neighbor_solution(current_solution):
 
 
 # Function to calculate optimum route using Initail Temperature, and 100*N iterations or 10*N scuessfull iterations. 
-
-# In[4]:
-
 
 def simulated_annealing_TSP(distance_matrix, initial_solution, initial_temperature, cooling_rate, stopping_condition):
     # Initialize current and best solutions
@@ -122,17 +103,12 @@ def simulated_annealing_TSP(distance_matrix, initial_solution, initial_temperatu
     return best_solution, best_distance , dist
 
 
-# In[5]:
-
 # Set number of nodes
 num_cities = 50
 random.seed(42)
 
 #Generate a random distance matrix (replace this with your actual data)
 distance_matrix = np.random.randint(1, 100, size=(num_cities, num_cities))
-
-
-# In[6]:
 
 
 # distance_matrix = [[29 ,81, 75, 46, 10, 94, 26, 43, 35,  5],
@@ -145,9 +121,6 @@ distance_matrix = np.random.randint(1, 100, size=(num_cities, num_cities))
 #  [64 ,90, 42, 44, 52, 41, 22, 31, 37,  9],
 #  [37 ,58, 40,  2,  2, 73, 14, 14, 99, 37],
 #  [36, 77, 43, 53 ,21 ,64 ,64 ,84, 71 ,56]]
-
-
-# In[14]:
 
 
 # Setting Initial Conditons and Printing results
